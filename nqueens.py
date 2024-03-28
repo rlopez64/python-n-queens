@@ -4,8 +4,6 @@ class Queen:
         self.y = y
 
     def attacks(self, other) -> bool:
-        # print("self: ", self.x, ",", self.y)
-        # print("other: ", other.x, ", ", other.y)
         slope = abs((other.y - self.y) / (other.x - self.x))
         if self.x == other.x:
             return True
@@ -24,7 +22,7 @@ class Board:
         for _ in range(n):
             self.board.append(Queen())
 
-    def place_queen(self, index: int, queen: int):
+    def place_queen(self, index: int, queen: Queen):
         self.board[index] = queen
 
     def remove_queen(self, index: int):
@@ -51,28 +49,18 @@ class Board:
         return string
 
 
+class NQueensSolution:
+
+    def __init__(self, n: int) -> None:
+        self.board = Board(n)
+        self.solve(0)
+
+    def solve(self, index) -> None:
+        # TODO: Solve with recursion
+
+        pass
+
+
 if __name__ == "__main__":
-    board = Board(4)
-    board.place_queen(0, Queen(0, 1))
-    board.place_queen(1, Queen(1, 3))
-    # board.place_queen(2, Queen(2, 0))
-    # board.place_queen(3, Queen(3, 2))
-    print(board)
-
-    print(board.valid_placement(Queen(2, 0)))
-
-    # board.remove_queen(0)
-    # print(board)
-    # q1 = Queen(2,3)
-    # q2 = Queen(3,2)
-
-    # print(q1.attacks(q2))
-
-
-# Initialize array of size N to hold queens
-#   Queens are original set to -1, -1
-
-# For each queen set it to a correct spot
-#   New queen does not attack previous queens
-
-#
+    n_queens = NQueensSolution(4)
+    print(n_queens.board)
