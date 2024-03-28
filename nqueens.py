@@ -44,11 +44,11 @@ class Board():
     
 
 if __name__ == '__main__':
-    # board = Board(4)
-    # board.place_queen(0, Queen(0, 1))
-    # board.place_queen(1, Queen(1, 3))
-    # board.place_queen(2, Queen(2, 0))
-    # board.place_queen(3, Queen(3, 2))
+    board = Board(4)
+    board.place_queen(0, Queen(0, 1))
+    board.place_queen(1, Queen(1, 3))
+    board.place_queen(2, Queen(2, 0))
+    board.place_queen(3, Queen(3, 2))
     # print(board)
     q1 = Queen(2,3)
     q2 = Queen(3,2)
